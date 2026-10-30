@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodieHub | Online Food Ordering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">Foodie<span>Hub</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-button" id="cartButton">Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">FRESH • FAST • DELICIOUS</p>
+        <h1>Your favourite food,<br><span>delivered fresh.</span></h1>
+        <p>Discover tasty meals from our kitchen and get them delivered to your door.</p>
+        <a class="primary-button" href="#menu">Explore Menu</a>
+      </div>
+      <div class="hero-art">
+        <div class="hero-circle"></div>
+        <div class="hero-food">🍔</div>
+        <div class="floating-tag">Fresh & tasty!</div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR MENU</p>
+          <h2>Explore popular dishes</h2>
+        </div>
+        <input id="searchInput" class="search" type="search" placeholder="Search food...">
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-category="All">All</button>
+        <button class="filter" data-category="Pizza">Pizza</button>
+        <button class="filter" data-category="Burger">Burger</button>
+        <button class="filter" data-category="Drinks">Drinks</button>
+        <button class="filter" data-category="Dessert">Dessert</button>
+      </div>
+      <div class="food-grid" id="foodGrid"></div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="about-icon">🍽️</div>
+      <div>
+        <p class="eyebrow">WHY FOODIEHUB?</p>
+        <h2>Good food. Good mood.</h2>
+        <p>We make ordering simple with a delicious menu, clear prices and a quick checkout experience. Choose your favourites and place a demo order in just a few clicks.</p>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h2>We would love to hear from you.</h2>
+      <p>Email: hello@foodiehub.example &nbsp; | &nbsp; Phone: +91 98765 43210</p>
+    </section>
+  </main>
+
+  <footer>© 2026 FoodieHub. Mini project for Advanced Internet Programming.</footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <div><p class="eyebrow">YOUR ORDER</p><h2>Shopping cart</h2></div>
+      <button class="close-button" id="closeCart" aria-label="Close cart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-bottom">
+      <div class="total-line"><span>Subtotal</span><strong id="cartTotal">₹0</strong></div>
+      <button class="primary-button checkout-button" id="checkoutButton">Proceed to checkout</button>
+    </div>
+  </aside>
+
+  <div class="modal" id="checkoutModal">
+    <div class="modal-card">
+      <button class="close-button modal-close" id="closeCheckout" aria-label="Close">×</button>
+      <p class="eyebrow">ALMOST THERE</p>
+      <h2>Delivery details</h2>
+      <form id="checkoutForm">
+        <label for="customerName">Full name</label>
+        <input id="customerName" name="customerName" required maxlength="100" placeholder="Enter your name">
+        <label for="customerPhone">Phone number</label>
+        <input id="customerPhone" name="customerPhone" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number">
+        <label for="customerAddress">Delivery address</label>
+        <textarea id="customerAddress" name="customerAddress" required maxlength="500" rows="3" placeholder="House number, street, city"></textarea>
+        <button class="primary-button checkout-button" type="submit">Place demo order</button>
+      </form>
+      <p class="note">Demo only (Java 11+). Run <code>javac FoodieHubServer.java</code>, then <code>java FoodieHubServer</code> from this folder to submit orders. No real payment or delivery is processed.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
